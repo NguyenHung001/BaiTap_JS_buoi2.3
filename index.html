@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo JS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+<body>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .container{
+            min-height: 800px;
+            max-width: 700px;
+            background-color: #eee;
+            border-radius: 5px;
+            box-shadow: 0 0px 25px 0px rgba(0, 0, 0, 0.404);
+            border: 3px solid rgba(255, 255, 0, 0.445);
+        }
+        img{
+            max-width: 30%;
+            display: block;
+            padding-top: 20px;
+            padding-left: 15px;
+        }
+        .container ul{
+            justify-content: center;
+        }
+        .card{
+            margin: auto;
+        }
+        .title h1{
+            text-align: center;
+            font-size: 3.5rem;
+            font-weight: 700;
+            padding: 0 50px 15px;
+        }
+        .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+            color: black;
+            background-color: #ffc107;
+            font-weight: 600;
+        }
+        .nav-pills .nav-link {
+            border-radius: 0.25rem;
+            font-weight: 600;
+            color: darkblue;
+        }
+        button{
+            display: block;
+            text-align: center;
+        }
+        .btn{
+            display: block;
+            margin: auto;
+        }
+    </style>
+    <div class="container my-5">
+        <img src="https://cybersoft.edu.vn/wp-content/uploads/2017/04/MAX-OP1.png" alt="logo">
+        <div class="title">
+            <h1>Bài tập JavaScript buổi 2-3</h1>
+        </div>
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#bai1" role="tab" aria-controls="pills-home" aria-selected="true">Bài 1</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#bai2" role="tab" aria-controls="pills-profile" aria-selected="false">Bài 2</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#bai3" role="tab" aria-controls="pills-contact" aria-selected="false">Bài 3</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#bai4" role="tab" aria-controls="pills-contact" aria-selected="false">Bài 4</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#bai5" role="tab" aria-controls="pills-contact" aria-selected="false">Bài 5</a>
+              </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="bai1" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="salary">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header text-white bg-dark text-center">
+                            Tính Tiền Lương Nhân Viên
+                        </div>
+                        <div class="card-body">                
+                            <form>
+                                <p>Số ngày làm:</p>
+                                <div class="form-group">                       
+                                    <input type="text" class="form-control" id="inputTotal" placeholder="Số ngày làm">                  
+                                 </div>
+                                <button type="submit" class="btn btn-danger" id="btnCalc1">Tính</button>
+                                <p id="txtResult1" class="mt-3"></p>
+                            </form>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="bai2" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="average__value">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header text-white bg-dark text-center">
+                            Tính Giá Trị Trung Bình
+                        </div>
+                        <div class="card-body">                
+                            <form>
+                                <p>Nhập 5 số thực:</p>
+                                <div class="form-group">                       
+                                    <input type="text" class="form-control mt-2" id="inputNumber1" placeholder="Number1">      
+                                    <input type="text" class="form-control mt-2" id="inputNumber2" placeholder="Number2">
+                                    <input type="text" class="form-control mt-2" id="inputNumber3" placeholder="Number3">
+                                    <input type="text" class="form-control mt-2" id="inputNumber4" placeholder="Number4">
+                                    <input type="text" class="form-control mt-2" id="inputNumber5" placeholder="Number5">            
+                                 </div>
+                                <button type="submit" class="btn btn-danger" id="btnCalc2">Tính</button>
+                                <p id="txtResult2" class="mt-3"></p>
+                            </form>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="bai3" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <div class="change__currency">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header text-white bg-dark text-center">
+                            Quy đổi tiền
+                        </div>
+                        <div class="card-body">                
+                            <form>
+                                <p>Số tiền cần quy đổi (USD):</p>
+                                <div class="form-group">                       
+                                    <input type="text" class="form-control" id="inputMoney" placeholder="Nhập số tiền">                  
+                                 </div>
+                                <button type="submit" class="btn btn-danger" id="btnCalc3">Quy đổi</button>
+                                <p id="txtResult3" class="mt-3"></p>
+                            </form>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="bai4" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <div class="rectangle">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header text-white bg-dark text-center">
+                            Hình Chữ Nhật
+                        </div>
+                        <div class="card-body">                
+                            <form>
+                                <p>Nhập chiều dài:</p>
+                                <div class="form-group">                       
+                                    <input type="text" class="form-control" id="inputLength" placeholder="Nhập chiều dài">                  
+                                 </div>
+                                 <p>Nhập chiều rộng:</p>
+                                <div class="form-group">                       
+                                    <input type="text" class="form-control" id="inputWidth" placeholder="Nhập chiều rộng">                  
+                                 </div>
+                                <button type="submit" class="btn btn-danger" id="btnCalc4">Tính</button>
+                                <p id="txtResult4" class="mt-3"></p>
+                            </form>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="bai5" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <div class="sum">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header text-white bg-dark text-center">
+                            Tính Tổng 2 ký số
+                        </div>
+                        <div class="card-body">                
+                            <form>
+                                <p>Nhập số có 2 chữ số:</p>
+                                <div class="form-group">                       
+                                    <input type="text" class="form-control" id="inputTotal2" placeholder="Nhập số có 2 chữ số">                  
+                                 </div>
+                                <button type="submit" class="btn btn-danger" id="btnCalc5">Tính</button>
+                                <p id="txtResult5" class="mt-3"></p>
+                            </form>
+                        </div>
+                      </div>
+                </div>
+            </div>
+          </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
