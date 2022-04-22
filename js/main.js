@@ -49,7 +49,7 @@ document.getElementById('btnCalc3').onclick = function(e){
     var tongTienVND = document.getElementById('inputMoney').value * 23500;
     document.getElementById('txtResult3').classList.add('alert-danger')
     document.getElementById('txtResult3').style.padding = '15px'
-    document.getElementById('txtResult3').innerHTML = "Tổng tiền: " + tongTienVND + "VND";
+    document.getElementById('txtResult3').innerHTML = "Tổng tiền: " + tongTienVND.toLocaleString() + "VND";
 }
 // ! Hình chữ nhật
 /**
